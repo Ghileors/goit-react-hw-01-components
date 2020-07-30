@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './StatisticList.module.css';
 
-const Statistic = props => (
-    <div>
-        <span className="label">{props.label}</span>
-        <span className="percentage">{props.percentage}</span>
-    </div>
-);
-
-Statistic.defaultProps = {
-    title: '',
-    percentage: 20,
+const Statistic = ({ title, children }) => {
+    return (
+        <section className={styles.statistics}>
+            {title ? <h2 className={styles.title}>{title}</h2> : null}
+            {children}
+        </section>
+    );
 };
 
 Statistic.propTypes = {
-    title: PropTypes.string.isRequired,
-    percentage: PropTypes.string.isRequired,
-    id: PropTypes.string,
+    title: PropTypes.string,
+};
+
+Statistic.defaultProps = {
+    title: 'not given prop',
 };
 
 export default Statistic;

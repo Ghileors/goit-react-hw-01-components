@@ -1,21 +1,41 @@
 import React from 'react';
-import Statistic from './Statistic';
+import PropTypes from 'prop-types';
+import styles from './StatisticList.module.css';
 
-const Statistics = ({ stats }) => (
-    <section className="statistics">
-        <h2 className="title">{stats.title}</h2>
+function getRandomColor() {
+    let r = function () {
+        return Math.floor(Math.random() * 256);
+    };
+    return `rgb(${r()},${r()},${r()})`;
+}
 
-        <ul className="stat-list">
+const StatisticList = ({ stats }) => {
+    return (
+        <ul className={styles.statList}>
             {stats.map(stat => (
-                <li key={stat.id} className="item">
-                    <Statistic
-                        label={stat.label}
-                        percentage={`${stat.percentage}%`}
-                    />
+                <li
+                    key={stat.id}
+                    className={styles.item}
+                    style={{ backgroundColor: getRandomColor() }}
+                >
+                    <span className={styles.label}>{stat.label}</span>
+                    <span className={styles.percentage}>
+                        {stat.percentage}%
+                    </span>
                 </li>
             ))}
         </ul>
-    </section>
-);
+    );
+};
 
-export default Statistics;
+export default StatisticList;
+
+StatisticList.propTypes = {
+    stats: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
+        }),
+    ).isRequired,
+};

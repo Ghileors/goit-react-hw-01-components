@@ -1,25 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import defaultImg from '../default-img.png';
+import styles from './FriendsList.module.css';
 
 const Friends = props => (
-    <div>
-        <span className="status">{props.isOnline}</span>
-        <img className="avatar" src={props.url} alt={props.name} width="48" />
-        <p className="name">{props.name}</p>
+    <div className={styles.itemContainer}>
+        <span
+            className={
+                props.isOnline ? styles.statusOnline : styles.statusOffline
+            }
+        ></span>
+        <img
+            className={styles.avatar}
+            src={props.url}
+            alt={props.name}
+            width="48"
+        />
+        <p className={styles.name}>{props.name}</p>
     </div>
 );
-
-Friends.defaultProps = {
-    url: defaultImg,
-    name: 'Anonymous',
-};
-
-Friends.propTypes = {
-    url: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool,
-    id: PropTypes.number,
-};
 
 export default Friends;

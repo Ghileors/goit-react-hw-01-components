@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './StatisticList.module.css';
 
-const Statistic = ({ title, children }) => {
-    return (
-        <section className={styles.statistics}>
-            {title ? <h2 className={styles.title}>{title}</h2> : null}
-            {children}
-        </section>
-    );
-};
+const Statistic = ({ label, percentage }) => (
+    <>
+        <span className={styles.label}>{label}</span>
+        <span className={styles.percentage}>{percentage}%</span>
+    </>
+);
 
 Statistic.propTypes = {
-    title: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
 };
 
 export default Statistic;

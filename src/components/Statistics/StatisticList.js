@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Statistic from './Statistic';
 import styles from './StatisticList.module.css';
 
 function getRandomColor() {
@@ -9,29 +10,27 @@ function getRandomColor() {
     return `rgb(${r()},${r()},${r()})`;
 }
 
-const StatisticList = ({ stats }) => {
-    return (
-        <ul className={styles.statList}>
-            {stats.map(stat => (
-                <li
-                    key={stat.id}
-                    className={styles.item}
-                    style={{ backgroundColor: getRandomColor() }}
-                >
-                    <span className={styles.label}>{stat.label}</span>
-                    <span className={styles.percentage}>
-                        {stat.percentage}%
-                    </span>
-                </li>
-            ))}
-        </ul>
-    );
-};
+const StatisticList = ({ stats }) => (
+    <ul className={styles.statList}>
+        {stats.map(({ id, label, percentage }) => (
+            <li
+                key={id}
+                className={styles.item}
+                style={{ backgroundColor: getRandomColor() }}
+            >
+                <Statistic label={label} percentage={percentage} />
+            </li>
+        ))}
+    </ul>
+);
 
 export default StatisticList;
 
+StatisticList.defaultProps = {
+    title: '',
+};
+
 StatisticList.propTypes = {
+    title: PropTypes.string,
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
 };

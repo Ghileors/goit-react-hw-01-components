@@ -31,11 +31,7 @@ const StatisticList = ({ stats }) => {
 export default StatisticList;
 
 StatisticList.propTypes = {
-    stats: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            label: PropTypes.string.isRequired,
-            percentage: PropTypes.number.isRequired,
-        }),
-    ).isRequired,
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
 };

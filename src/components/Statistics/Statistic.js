@@ -15,8 +15,4 @@ Statistic.propTypes = {
     title: PropTypes.string,
 };
 
-Statistic.defaultProps = {
-    title: 'not given prop',
-};
-
 export default Statistic;

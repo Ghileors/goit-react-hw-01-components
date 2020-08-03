@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Container from './components/Container/Container';
 import Profile from './components/Profile/Profile';
 import Statistic from './components/Statistics/Statistic';
 import StatisticList from './components/Statistics/StatisticList';
@@ -13,14 +14,14 @@ import transactions from './components/TransactionHistory/transactions.json';
 
 const App = () => {
     return (
-        <>
+        <Container>
             <Profile {...user} />
             <Statistic title="Upload stats">
                 <StatisticList stats={statisticalData} />
             </Statistic>
             <FriendList friends={friends} />
             <TransactionHistory items={transactions} />
-        </>
+        </Container>
     );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Friends from './Friends';
-import defaultImg from './default-img.png';
 import styles from './FriendsList.module.css';
 
 const FriendList = ({ friends }) => (
@@ -20,18 +19,7 @@ const FriendList = ({ friends }) => (
     </section>
 );
 
-Friends.defaultProps = {
-    url: defaultImg,
-    name: 'Anonymous',
-};
 FriendList.protoTypes = {
-    friends: PropTypes.arrayOf(
-        PropTypes.shape({
-            url: PropTypes.string,
-            name: PropTypes.string,
-            isOnline: PropTypes.bool.isRequired,
-            id: PropTypes.number.isRequired,
-        }),
-    ).isRequired,
+    id: PropTypes.number.isRequired,
 };
 export default FriendList;

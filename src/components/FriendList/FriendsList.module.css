@@ -5,30 +5,29 @@
 
 .itemContainer {
     display: flex;
-    border-radius: 5px;
-    box-shadow: -3px 5px 12px -3px rgba(0, 0, 0, 0.75);
-    display: flex;
     align-items: center;
     width: 500px;
     height: 140px;
     margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: -3px 5px 12px -3px rgba(0, 0, 0, 0.75);
 }
 
-.statusOnline {
+.status {
     width: 34px;
     height: 34px;
     border-radius: 50%;
     margin-right: 16px;
     margin-left: 16px;
+}
+
+.online {
+    composes: status;
     background-color: #47b04b;
 }
 
-.statusOffline {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    margin-right: 16px;
-    margin-left: 16px;
+.offline {
+    composes: status;
     background-color: #fe5056;
 }
 

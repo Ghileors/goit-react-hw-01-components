@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultImg from './default-img.png';
+
 import styles from './Profile.module.css';
+
+import defaultImg from './default-img.png';
 
 const Profile = props => (
     <div className={styles.profile}>

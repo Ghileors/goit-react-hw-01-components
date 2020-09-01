@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './FriendsList.module.css';
+
 import defaultImg from './default-img.png';
 
+import styles from './FriendsList.module.css';
+
 const Friends = props => (
-    <div className={styles.itemContainer}>
+    <li className={styles.itemContainer}>
         <span
             className={props.isOnline ? styles.online : styles.offline}
         ></span>
@@ -15,7 +17,7 @@ const Friends = props => (
             width="48"
         />
         <p className={styles.name}>{props.name}</p>
-    </div>
+    </li>
 );
 
 Friends.defaultProps = {

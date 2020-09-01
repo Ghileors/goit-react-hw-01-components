@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Statistic from './Statistic';
+import Section from './Section';
+
 import styles from './StatisticList.module.css';
 
 function getRandomColor() {
@@ -11,17 +14,18 @@ function getRandomColor() {
 }
 
 const StatisticList = ({ stats }) => (
-    <ul className={styles.statList}>
-        {stats.map(({ id, label, percentage }) => (
-            <li
-                key={id}
-                className={styles.item}
-                style={{ backgroundColor: getRandomColor() }}
-            >
-                <Statistic label={label} percentage={percentage} />
-            </li>
-        ))}
-    </ul>
+    <Section title="Upload stats">
+        <ul className={styles.statList}>
+            {stats.map(({ id, label, percentage }) => (
+                <li
+                    className={styles.item}
+                    style={{ backgroundColor: getRandomColor() }}
+                >
+                    <Statistic key={id} label={label} percentage={percentage} />
+                </li>
+            ))}
+        </ul>
+    </Section>
 );
 
 export default StatisticList;

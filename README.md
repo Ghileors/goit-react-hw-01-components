@@ -1,29 +1,7 @@
-# Установка зависимостей
+### GoIT React home work 01
 
-Установить в проект следующие пакеты.
+[Instructions for installing a basic Webpack build](https://github.com/luxplanjay/webpack-starter-kit)
 
-```bash
-npm install --save-dev prettier husky lint-staged
-```
+[Link to the task](https://github.com/goitacademy/react-homework/tree/master/homework-01)
 
-## Интерграция плагинов
-
-Ссылки на документацию по интеграции плагинов в популярные редакторы.
-
-- [Prettier editor integration](https://prettier.io/docs/en/editors.html)
-- [ESLint editor integration](https://eslint.org/docs/user-guide/integrations)
-
-## Настройки VSCode
-
-Для комфортной работы, после установки плагинов, нужно добавить несколько
-настроек редактора для автосохранения и форматирования файлов.
-
-```json
-{
-  "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
-}
-```
+[Link to the GitHub Pages](https://ghileors.github.io/goit-react-hw-01-components/)
